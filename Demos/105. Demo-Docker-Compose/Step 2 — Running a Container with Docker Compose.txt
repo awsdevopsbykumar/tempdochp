@@ -1,0 +1,28 @@
+mkdir hello-world
+cd hello-world
+
+echo "my-test:" > docker-compose.yml
+echo "  image: hello-world" >> docker-compose.yml
+
+docker images
+
+docker-compose up
+
+docker ps
+
+docker ps -a
+
+docker-compose up -d
+
+docker-compose ps -a
+
+docker-compose stop
+
+#How to enter into container
+docker exec -it b86b6699714c /bin/bash
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+yum install wget unzip zip -y
+wget https://www.javainuse.com/zip/docker/employee-producer_docker_chap2.zip
+ls -ltr
+unzip employee-producer_docker_chap2.zip 
+ls -tlr
+cd employee-producer
+ls -ltr
+sudo yum install maven -y
+java
+javac
+clear
+mvn clean install
+ls -tlr
+docker image build -t employee-producer .
+docker container run --name producer -p 8080:8080 -d employee-producer
+docker container logs producer
+
+http://100.26.135.133:8080/employee
