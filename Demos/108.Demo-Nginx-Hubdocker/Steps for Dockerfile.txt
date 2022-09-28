@@ -1,0 +1,25 @@
+sudo -i
+sudo yum check-update
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install docker
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo systemctl status docker
+sudo yum install git -y
+cd /opt/
+git clone https://github.com/awsdevopsbykumar/tempdochp.git
+
+
+
+docker build -t awsdevopsbykumar/nginx:v1.1.1 .
+
+docker login
+
+docker push awsdevopsbykumar/nginx:v1.1.1
+
+docker container run -it -d --name mynginx111 -p 80:80 awsdevopsbykumar/nginx:v1.1.1
+
+docker ps
+
+http://192.168.139.128:80
